@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active:
+    - dev
+  devtools:
+    restart:
+      enabled: true
+      additional-paths:
+      - src/main/java
+      exclude: "/web"
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+    env:
+      enabled: true
+    info:
+      enabled: true
+#  server:
+#    port: 8084
