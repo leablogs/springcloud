@@ -8,6 +8,8 @@ spring:
       additional-paths:
       - src/main/java
       exclude: "/web"
+  application:
+    name: springBootClient
 management:
   endpoint:
     health:
