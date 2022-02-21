@@ -1,7 +1,7 @@
 server:
   port: 8082
 
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:1111/eureka/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eurka/
