@@ -9,7 +9,7 @@ spring:
       - src/main/java
       exclude: "/web"
   application:
-    name: springBootClient
+    name: userClient
 management:
   endpoint:
     health:

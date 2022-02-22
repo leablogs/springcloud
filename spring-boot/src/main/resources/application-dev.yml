@@ -1,7 +1,6 @@
 server:
-  port: 8082
-
+  port: 8082  servlet:    context-path: getUser
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9001/eurka/
+      defaultZone: http://eureak1:9001/eureka,http://eureak2:9002/eureka
