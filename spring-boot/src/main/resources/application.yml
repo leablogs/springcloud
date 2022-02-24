@@ -5,11 +5,9 @@ spring:
   devtools:
     restart:
       enabled: true
-      additional-paths:
-      - src/main/java
-      exclude: "/web"
-  application:
-    name: userClient
+      # additional-paths:
+      # - src/main/java
+      # exclude: "/web"
 management:
   endpoint:
     health:

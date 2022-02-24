@@ -16,4 +16,5 @@ eureka:
       register-with-eureka: false # 作为注册中心服务，不向自己注册自己
       fetch-registry: false # 注册中心负责维护服务实例，不做检索服务
       service-url:
-         defaultZone: http://eureak2:9002/eureka/
+         # defaultZone: http://eureak2:9002/eureka/
+         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

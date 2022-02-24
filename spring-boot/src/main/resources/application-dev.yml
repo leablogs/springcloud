@@ -1,6 +1,11 @@
 server:
-  port: 8082  servlet:    context-path: getUser
+  port: 8082
 eureka:
   client:
+#    register-with-eureka: false
+    fetch-registry: true
     service-url:
-      defaultZone: http://eureak1:9001/eureka,http://eureak2:9002/eureka
+      defaultZone: http://eureak1:9001/eureka/ # ,http://eureak2:9002/eureka/'  instance:    instance-id: springcloudclient
+spring:
+  application:
+    name: eureka-service-client

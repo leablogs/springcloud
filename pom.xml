@@ -18,6 +18,8 @@
 		<module>spring-boot</module>
 		<module>spring-cloud-eureka-server</module>
 		<module>spring-cloud-eureka-server-1112</module>
+		<module>consumer-server</module>
+		<module>consumer-client</module>
 	</modules>
 	<dependencies>
 		<dependency>
