@@ -20,6 +20,7 @@
 		<module>spring-cloud-eureka-server-1112</module>
 		<module>consumer-server</module>
 		<module>consumer-client</module>
+		<module>consumer-server7002</module>
 	</modules>
 	<dependencies>
 		<dependency>

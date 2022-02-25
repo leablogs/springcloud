@@ -14,5 +14,10 @@ public class UserService {
 
 	public Map<String, String> findAll() {
 		return restTemplate.getForObject("http://PANDA-FRAME/user/findAll", Map.class);
+//		return restTemplate.postForObject("http://PANDA-FRAME/user/findAll","", Map.class);
+//		restTemplate.delete("http://PANDA-FRAME/user/findAll");
+//		return restTemplate.put("http://PANDA-FRAME/user/findAll", Map.class);
+//		return restTemplate.getForObject("http://PANDA-FRAME/user/findAll", Map.class);
+//		return restTemplate.getForObject("http://PANDA-FRAME/user/findAll", Map.class);
 	}
 }
