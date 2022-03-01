@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leablogs.mapper.UserMapper">
+	<cache eviction="FIFO" flushInterval="60000" size="512"
+		readOnly="true" />
+	<resultMap type="com.leablogs.mapper.UserMapper" id="User">
+		<id column="id" jdbcType="INTEGER" property="userId" />
+		<result column="user_id" jdbcType="VARCHAR" property="userName" />
+		<result column="password" jdbcType="VARCHAR"
+			property="password" />
+		<result column="email" jdbcType="VARCHAR" property="email" />
+	</resultMap>
+	<sql id="base_column_list">
+		user_id,user_name,password,email
+	</sql>
+	<select id="getByUserNameAndPassword" resultType="User">
+		select
+		<include refid="base_column_list" />
+		from
+		user where user_name=#{userName, jdbcType=VARCHAR} and
+		password=#{password,jdbcType=VARCHAR}
+	</select>
+	<insert id="addUsers" parameterType="User">
+		insert into
+		user(user_id,user_name,password,email)
+		values(#{userId},#{userName},#{password},#{email})
+	</insert>
+	<!-- <select id="getAllUsers" resultType="com.leablogs.User" parameterType="map"> 
+		select <include refid="base_column_list" /> </select> -->
+</mapper>
