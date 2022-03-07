@@ -18,4 +18,8 @@ public class UserController {
 
 		return map;
 	}
+	@RequestMapping(value = "/hello",method = RequestMethod.GET)
+	public String hello() {
+		return "server-1";
+	}
 }

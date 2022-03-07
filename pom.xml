@@ -23,6 +23,10 @@
 		<module>consumer-server7002</module>
 		<module>spring-cloud-hystrix</module>
 		<module>spring-boot-mybatis</module>
+		<module>spring-cloud-feign</module>
+		<module>common</module>
+		<module>hello-service-api</module>
+		<module>api-gateway</module>
 	</modules>
 	<dependencies>
 		<dependency>

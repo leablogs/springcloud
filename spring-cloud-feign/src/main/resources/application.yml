@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: feign-consumer
+server:  port: 6003
+eureka:  client:    service-url:
+      defaultZone: http://eureak1:9001/eureka/
+  instance:
+    instance-id: 192.168.0.105:${server.port}
+    prefer-ip-address: true
+    status-page-url-path: /index.html
