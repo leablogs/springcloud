@@ -27,6 +27,9 @@
 		<module>common</module>
 		<module>hello-service-api</module>
 		<module>api-gateway</module>
+		<module>spring-cloud-config</module>
+		<module>spring-cloud-config-client</module>
+		<module>spring-cloud-bus</module>
 	</modules>
 	<dependencies>
 		<dependency>

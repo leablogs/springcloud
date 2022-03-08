@@ -1,0 +1,6 @@
+server:  port: 5002
+spring:
+  application:
+    name: didispace
+  cloud:    config:      discovery:        enabled: true        service-id: config-server#      uri: http://localhost:5001      profile: dev
+      label: config-label-test      fail-fast: true # 先判断config server是否征程，并快速相应内容      retry:        multiplier: 1000        initial-interval: 1100        max-interval: 2000        max-attempts: 6eureka:  client:    service-url:      defaultZone: http://eureak1:9001/eureka/  instance:    instance-id: 192.168.0.105:${server.port}    prefer-ip-address: true    status-page-url-path: /index.html

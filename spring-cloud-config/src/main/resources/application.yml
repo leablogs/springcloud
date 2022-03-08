@@ -1,0 +1,18 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: config-server
+  cloud:    config:      server:        git:          uri: https://gitee.com/shilh/spring-cloud-config.git  # 配置git仓库位置
+          search-paths: # 配置仓库路径下的相对搜索位置，可以多个          - config-repo
+          username: shilh # git仓库用户名
+          password: shilihui0107 # git仓库密码
+          skip-ssl-validation: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureak1:9001/eureka/
+  instance:
+    instance-id: 192.168.0.105:${server.port}
+    prefer-ip-address: true
+    status-page-url-path: /index.html
