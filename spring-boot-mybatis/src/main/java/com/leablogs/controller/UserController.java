@@ -1,5 +1,7 @@
 package com.leablogs.controller;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,8 +32,12 @@ public class UserController {
 		user.setEmail("lixw@qq.com");
 		user.setUserId("10");
 		user.setPassword("1234566");
-		user.setUserName("lixw");
+		user.setUserName("lix3" + System.currentTimeMillis());
 		System.out.println(user.toString());
 		return userService.addUser(user);
+	}
+	@RequestMapping(value = "getUserExt" ,method = RequestMethod.GET)
+	public String getUserAndExt() {
+		return userService.getUserExt();
 	}
 }

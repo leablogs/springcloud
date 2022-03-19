@@ -1,15 +1,31 @@
+server:
+  port: 10010
 mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations:
   - classpath:mybatis/mapper/*.xml
   type-aliases-package: com.leablogs.bean
   configuration:
     # 默认开启驼峰命名法，可以不用设置该属性    map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-spring:  datasource:    username: root
+
+#    - com.leablogs.config.MybatisPlus
+spring:
+  cache:
+    cache-names:
+    - redisCache
+    redis:
+      cache-null-values: true
+      key-prefix: lea_
+      time-to-live: 60ms    
+    type: redis
+      datasource:    username: root
     password: 123456
-    url: jdbc:mysql://localhost:3307/sys?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://leablogs.com:3306/sys?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    tomcat:
+      default-transaction-isolation: 2
     druid:      initial-size: 5 # 初始化大小
       min-idle: 5 # 最小
       max-active: 20 # 最大
@@ -38,9 +54,13 @@ spring:  datasource:    username: root
         login-username: admin
           redis:    database: 5
     host: 127.0.0.1
-    port: 6379
+    port: 13292
     timeout: 5000
     jedis:      pool:        max-active: 1000
         max-wait: 2000
         max-idle: 500
         min-idle: 50
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true

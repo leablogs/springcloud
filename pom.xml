@@ -30,6 +30,10 @@
 		<module>spring-cloud-config</module>
 		<module>spring-cloud-config-client</module>
 		<module>spring-cloud-bus</module>
+		<module>spring-boot-es</module>
+		<module>spring-boot-starter-security</module>
+		<module>spring-boot-test</module>
+		<module>spring-boot-syncpool</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -45,6 +49,11 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
 		<dependency>
@@ -68,6 +77,12 @@
 			<artifactId>spring-rabbit-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

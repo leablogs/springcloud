@@ -10,7 +10,8 @@ import com.leablogs.bean.User;
 public interface UserMapper {
 	User getByUserNameAndPassword(User user);
 
-	Boolean addUsers(User user);
+	Integer addUsers(User user);
 
+	User getUserAndExt();
 //	List<User> getAllUsers();
 }
