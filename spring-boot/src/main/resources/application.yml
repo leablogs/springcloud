@@ -18,5 +18,15 @@ management:
       enabled: true
     info:
       enabled: true
+    beans:
+      enabled: true
+    metrics:
+      enabled: true
+#  endpoints:
+#    web:
+#      exposure:
+#        exclude:
+#        - "*"
+##      base-path: "actuator"
 #  server:
 #    port: 8084

@@ -10,6 +10,7 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 #    - com.leablogs.config.MybatisPlus
+    cache-enabled: true
 spring:
   cache:
     cache-names:

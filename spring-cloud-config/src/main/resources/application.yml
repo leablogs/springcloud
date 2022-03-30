@@ -8,6 +8,7 @@ spring:
           username: shilh # git仓库用户名
           password: shilihui0107 # git仓库密码
           skip-ssl-validation: true
+          force-pull: true # 防止本地存储库变“脏”
 eureka:
   client:
     service-url:

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>播放h264</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/js/wfs.js"></script>
+	</head>
+	<body>
+		<select id="sel" name="test">
+			<option value="请选择">请选择</option>
+			<option value="admin">admin</option>
+		</select>
+		<h2>播放h264</h2>
+		<div class="wfsjs">
+			<video muted="muted" webkit-playsinline="true" id="video1" width="640" height="480" controls
+				autoplay="autoplay"></video>
+			<div class="ratio"></div>
+		</div>
+		<script src="/js/jquery-3.4.1.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var palyPromise = video.play();
+			console.log(palyPromise);
+			// audio.load()
+			// let playPromise = audio.play()
+			// if (playPromise !== undefined) {
+			// 	playPromise.then(() => {
+			// 		audio.play()
+			// 	}).catch(()=> {
+
+			// 	})
+			// }
+			$(function() {
+				$("#sel")
+					.on(
+						"change",
+						function() {
+							if ($("#sel").val() != "请选择") {
+								if (Wfs.isSupported()) {
+									var video1 = document
+										.getElementById("video1");
+									wfss = new Wfs();
+									// wfss.attachMedia(video1,'ch1',"H264Raw",$("#sel").val());
+									wfss.attachMedia(video1, 'ch1',
+										"H264Raw", "admin");
+								}
+							}
+						})
+			})
+		</script>
+	</body>
+</html>
