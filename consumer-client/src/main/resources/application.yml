@@ -8,6 +8,10 @@ eureka:
     instance-id: 192.168.0.105:${server.port}
     prefer-ip-address: true
     status-page-url-path: /index.html
+    status-page-url: http://eureak1:9001/info
+#    health-check-url: 
+#    home-page-url: 
+#    home-page-url-path: 
 spring:
 #  cloud:
 #    inetutils:

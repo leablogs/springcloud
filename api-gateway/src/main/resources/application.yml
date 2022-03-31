@@ -2,11 +2,18 @@ spring:
   application:
     name: api-getway
 server:  port: 5555
-zuul:  routes:
+zuul:
+  ignored-services:
+  - "*"
+  prefix: /api  routes:
     api-a:
       path: /api-a/**
       service-id: panda-frame
     api-b:
       path: /api-b/**
       service-id: feign-consumer
+  host:
+    socket-timeout-millis: 30000
 eureka:  client:    service-url:      defaultZone: http://eureak1:9001/eureka/
+  instance:
+    prefer-ip-address: true

@@ -7,10 +7,18 @@ mybatis:
   type-aliases-package: com.leablogs.bean
   configuration:
     # 默认开启驼峰命名法，可以不用设置该属性    map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 具体日志实现 slf4j log4j log4j2 jdk_logging commons_logging stdout_logging no_logging
 
 #    - com.leablogs.config.MybatisPlus
     cache-enabled: true
+    lazy-loading-enabled: false # 全局延迟加载
+    use-generated-keys: true # 允许jdbc支持自动生成住建
+    default-executor-type: simple # 配置默认executor类型  simple reuse batch
+    default-statement-timeout: 10 # 设置超时时间
+    safe-row-bounds-enabled: false # 允许嵌套语句中使用分页(rowbounds)
+    local-cache-scope: session # 利用本地缓存机制防止循环引用和加速重复查询，默认session 一个会话执行所有查询，statement本地会话尽用在语句执行上，对相同sqlSession不同调用不会共享数据
+    proxy-factory:
+      CGLIB # 创建具有延迟加载能力的对象所用到的代理工具 javassist 默认  cglib
 spring:
   cache:
     cache-names:
