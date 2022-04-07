@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.web.context.WebApplicationContext;
 
 //@Scope(ConfigurableListableBeanFactory.SCOPE_PROTOTYPE)
-//@Scope(ConfigurableListableBeanFactory.SCOPE_SINGLETON)
-@Scope(WebApplicationContext.SCOPE_APPLICATION)
+@Scope(ConfigurableListableBeanFactory.SCOPE_SINGLETON)
+//@Scope(WebApplicationContext.SCOPE_APPLICATION)
 public class BaseFiled {
 
 	private Integer id;

@@ -14,7 +14,6 @@
 	<modules>
 		<module>spring-boot</module>
 		<module>spring-cloud-eureka-server</module>
-		<module>spring-cloud-eureka-server-1112</module>
 		<module>consumer-server</module>
 		<module>consumer-client</module>
 		<module>consumer-server7002</module>
@@ -33,7 +32,6 @@
 		<module>spring-boot-syncpool</module>
 		<module>spring-boot-websocket</module>
 		<module>Socket</module>
-		<module>spring-boot-video</module>
 		<module>spring-boot-websocket-h264</module>
 		<module>foundation</module>
 		<module>spring-boot-actuator</module>
