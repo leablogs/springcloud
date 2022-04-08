@@ -1,8 +1,1 @@
-server:
-  port: 7001
-eureka:  client:    service-url:      defaultZone: http://eureak1:9001/eureka/
-  instance:    instance-id: 192.168.0.105:${server.port}
-    prefer-ip-address: true
-    status-page-url-path: /index.html
-spring:#  cloud:#    inetutils:#      default-ip-address: 192.168.0.105
-  application:    name: panda-frame
+server:  port: 7001eureka:  client:    service-url:      defaultZone: http://eureak1:9001/eureka/    fetch-registry: true # 是否需要去检索寻找服务，默认是true    healthcheck:      enabled: true # eureka 客户端交给springboot-actuator监管    enabled: true # 启用eureka客户端  instance:    name: wang # 元数据设置方式  eureka.instance.<properties>=<value>    instance-id: 192.168.0.105:${server.port}    prefer-ip-address: true    status-page-url-path: /index.html    status-page-url:    metadata-map:      zone: tianjin      instanceId: ${spring.application.name}:${random.value}  # 随机生成实例名#    health-check-url:    lease-renewal-interval-in-seconds: 30 # Eureka 想服务端发送心跳时间间隔 单位秒 默认30    lease-expiration-duration-in-seconds: 90 # 服务短收到最后一次心跳后等待的时间上线 秒，默认90 超过服务将会被移除    hostname: "" # 主机名，不配置的时候根据操作系统主机名获取#    appname: "" # 服务名，默认取spring.application.name配置的值，如果没有则为 unknuwn#    non-secure-port-enabled: true # 是否启用安全通信端口号#    non-secure-port: 80 # 非安全通信端口号#    secure-port: 443 # 安全通信端口号#    non-secure-port-enabled: true # 是否启用安全通信端口号spring:#  cloud:#    inetutils:#      default-ip-address: 192.168.0.105  application:    name: panda-frame

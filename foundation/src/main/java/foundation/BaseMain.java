@@ -3,14 +3,14 @@ package foundation;
 import java.lang.reflect.AnnotatedType;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.AbstractSingleBeanDefinitionParser;
-import org.springframework.web.servlet.DispatcherServlet;
-import org.springframework.web.servlet.HandlerAdapter;
+//import org.springframework.beans.factory.xml.AbstractSingleBeanDefinitionParser;
+//import org.springframework.web.servlet.DispatcherServlet;
+//import org.springframework.web.servlet.HandlerAdapter;
+//import sun.misc.Unsafe;
 
 public class BaseMain {
 	public static void main(String[] args) throws ParseException {
@@ -32,6 +32,7 @@ public class BaseMain {
 		System.out.println(stringBuffer.append(chars));
 //		System.out.println(chars.toString());
 		AnnotatedType[] beanFactory = BeanFactory.class.getAnnotatedInterfaces();
-		DispatcherServlet
+		List arrayList = new  ArrayList<String>();
+		new LinkedList<>();
 	}
 }

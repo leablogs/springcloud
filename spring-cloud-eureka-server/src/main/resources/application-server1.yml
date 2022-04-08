@@ -7,14 +7,41 @@ eureka:
    instance:
       # prefer-ip-address: true # 注册中心使用ip地址形式 默认false
       hostname: eureak1
-      lease-renewal-interval-in-seconds: 30 # 服务续约任务调用间隔时间
-      lease-expiration-duration-in-seconds: 90 # 服务失效时间
+      lease-renewal-interval-in-seconds: 30 # 服务续约任务调用间隔时间 eureka client发送心跳给server端的频率  默认30秒
+      lease-expiration-duration-in-seconds: 90 # 服务失效时间 服务续约      默认为90秒
+                                                                        # 如果该值太大，则很可能将流量转发过去的时候，该instance已经不存活了。
+                                                                        # 如果该值设置太小了，则instance则很可能因为临时的网络抖动而被摘除掉。
+                                                                        # 该值至少应该大于leaseRenewalIntervalInSeconds
 #   server:
 #      enable-self-preservation: true # 自我保护模式关闭
 #      renewal-percent-threshold: 0.49
    client:
       register-with-eureka: false # 作为注册中心服务，不向自己注册自己
       fetch-registry: false # 注册中心负责维护服务实例，不做检索服务
+      region: myregion # 设置region 地域
+      availability-zones: # 设置zones 可用区
+         myregion: myzone,myzone1
       service-url:
          # defaultZone: http://eureak2:9002/eureka/
          defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#         myzone: http://user.password@${eureka.instance.hostname}:${server.port}/eureka/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
