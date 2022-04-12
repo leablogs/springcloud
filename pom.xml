@@ -44,7 +44,6 @@
 		<module>spring-boot-websocket-h264</module>
 		<module>foundation</module>
 		<module>spring-boot-actuator</module>
-		<module>spring-boot-mybatis-plus</module>
 	</modules>
 	<dependencies>
 		<dependency>
