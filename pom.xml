@@ -11,6 +11,15 @@
 		<version>2.3.8.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
+
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<java.version>11</java.version>
+	</properties>
+
 	<modules>
 		<module>spring-boot</module>
 		<module>spring-cloud-eureka-server</module>
@@ -35,6 +44,7 @@
 		<module>spring-boot-websocket-h264</module>
 		<module>foundation</module>
 		<module>spring-boot-actuator</module>
+		<module>spring-boot-mybatis-plus</module>
 	</modules>
 	<dependencies>
 		<dependency>
