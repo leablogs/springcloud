@@ -45,6 +45,8 @@
 		<module>foundation</module>
 		<module>spring-boot-actuator</module>
 		<module>spring-boot-mybatis-plus</module>
+		<module>netty</module>
+		<module>rabbitmq</module>
 	</modules>
 	<dependencies>
 		<dependency>
