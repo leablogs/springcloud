@@ -47,6 +47,7 @@
 		<module>spring-boot-mybatis-plus</module>
 		<module>netty</module>
 		<module>rabbitmq</module>
+        <module>xxl-job</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -110,7 +111,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.79</version>
+			<version>1.2.58</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
 		<dependency>
@@ -146,19 +147,19 @@
 			</releases>
 		</repository>
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>public</id>
-			<name>aliyun nexus</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+<!--	<pluginRepositories>-->
+<!--		<pluginRepository>-->
+<!--			<id>public</id>-->
+<!--			<name>nexus nexus</name>-->
+<!--			<url>http://nexus.leablogs.com/repository/maven-public/</url>-->
+<!--			<releases>-->
+<!--				<enabled>true</enabled>-->
+<!--			</releases>-->
+<!--			<snapshots>-->
+<!--				<enabled>true</enabled>-->
+<!--			</snapshots>-->
+<!--		</pluginRepository>-->
+<!--	</pluginRepositories>-->
 	<build>
 		<plugins>
 			<plugin>
@@ -175,4 +176,15 @@
 			</plugin>
 		</plugins>
 	</build>
+	<!-- 项目上传到nexus maven仓库 -->
+<!--	<distributionManagement>-->
+<!--		<snapshotRepository>-->
+<!--			<id>nexus-snapshots</id>-->
+<!--			<url>http://nexus.leablogs.com/repository/maven-snapshots/</url>-->
+<!--		</snapshotRepository>-->
+<!--		<repository>-->
+<!--			<id>nexus-releases</id>-->
+<!--			<url>http://nexus.leablogs.com/repository/maven-releases/</url>-->
+<!--		</repository>-->
+<!--	</distributionManagement>-->
 </project>
