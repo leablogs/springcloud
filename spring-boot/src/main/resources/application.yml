@@ -8,6 +8,8 @@ spring:
       # additional-paths:
       # - src/main/java
       # exclude: "/web"
+  mail:
+    host: ""
 management:
   endpoint:
     health:
@@ -30,3 +32,4 @@ management:
 ##      base-path: "actuator"
 #  server:
 #    port: 8084
+
