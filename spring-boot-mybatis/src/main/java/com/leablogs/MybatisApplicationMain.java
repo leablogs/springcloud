@@ -1,12 +1,17 @@
 package com.leablogs;
 
+import java.io.Reader;
 import java.util.Properties;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.Configuration;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -32,6 +37,12 @@ public class MybatisApplicationMain {
 	public static void main(String[] args) throws Exception {
 		Configuration configuration = new Configuration();
 		SpringApplication.run(MybatisApplicationMain.class, args);
+		
+		String resource = "";
+		Reader reader = Resources.getResourceAsReader(resource);
+		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		SqlSession session = sessionFactory.openSession();
+		
 	}
 
 //	@PostConstruct
