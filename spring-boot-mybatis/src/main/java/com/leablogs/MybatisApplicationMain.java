@@ -5,6 +5,7 @@ import java.util.Properties;
 import javax.annotation.PostConstruct;
 
 import org.apache.ibatis.plugin.Interceptor;
+import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class MybatisApplicationMain {
 //	SqlSessionFactory sqlSessionFactory = null;
 
 	public static void main(String[] args) throws Exception {
+		Configuration configuration = new Configuration();
 		SpringApplication.run(MybatisApplicationMain.class, args);
 	}
 
