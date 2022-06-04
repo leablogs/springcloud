@@ -1,7 +1,7 @@
 package intercepter;
 
 import java.io.IOException;
-import java.net.http.HttpClient.Redirect;
+//import java.net.http.HttpClient.Redirect;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
