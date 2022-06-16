@@ -32,4 +32,24 @@ management:
 ##      base-path: "actuator"
 #  server:
 #    port: 8084
-
+#logging:
+#  file:
+#    path: D://log//log.log
+##    name: wang
+##  level: info
+#  pattern:
+#    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level-5level %logger- %msg%n'
+  
+debug: true
+  
+${random.int}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    

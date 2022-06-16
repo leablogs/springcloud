@@ -9,21 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>xxl-job</artifactId>
+    <artifactId>desgin-patten</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
     </properties>
-
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.githup.liuyanggithup/xxl-job-core -->
-        <dependency>
-            <groupId>com.xuxueli</groupId>
-            <artifactId>xxl-job-core</artifactId>
-            <version>2.2.0</version>
-        </dependency>
-
-    </dependencies>
 
 </project>
