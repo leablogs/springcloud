@@ -2,13 +2,13 @@ package foundation.thread;
 
 import java.util.concurrent.locks.StampedLock;
 
-import jdk.internal.misc.Unsafe;
+//import jdk.internal.misc.Unsafe;
 
 public class MyStampedLock {
 	public static void main(String[] args) {
 		StampedLock stampedLock = new StampedLock();
 		stampedLock.tryReadLock();
-		Unsafe.getUnsafe();
+//		Unsafe.getUnsafe();
 		long st = 1L;
 		long st1 = 3L;
 		// 1 01

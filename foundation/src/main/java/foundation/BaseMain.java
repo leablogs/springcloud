@@ -33,6 +33,6 @@ public class BaseMain {
 //		System.out.println(chars.toString());
 		AnnotatedType[] beanFactory = BeanFactory.class.getAnnotatedInterfaces();
 		List arrayList = new  ArrayList<String>();
-		new LinkedList<>();
+//		new LinkedList<>();
 	}
 }

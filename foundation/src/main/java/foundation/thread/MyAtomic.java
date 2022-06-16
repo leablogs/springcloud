@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import org.apache.log4j.Logger;
 
-import jdk.internal.misc.Unsafe;
+//import jdk.internal.misc.Unsafe;
 
 public class MyAtomic {
 	private final static Logger LOGGER = Logger.getLogger(MyAtomic.class);

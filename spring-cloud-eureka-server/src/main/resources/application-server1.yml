@@ -1,6 +1,14 @@
 server:
    port: 9001
 spring:
+#   cloud:
+#     gateway:
+#        routes:
+#           - id: pri
+#             uri: http://
+#             predicates:
+#                - Path=/dept/list/**
+#                - Method=GET
    application:
       name: eureka-server
 eureka:
