@@ -1,19 +1,13 @@
 server:
-   port: 9002
-spring:
-   application:
-      name: eureka-server
+  port: 9002
 eureka:
-   instance:
-      # prefer-ip-address: true # 注册中心使用ip地址形式 默认false
-      hostname: eureak2
-      lease-renewal-interval-in-seconds: 30 # 服务续约任务调用间隔时间
-      lease-expiration-duration-in-seconds: 90 # 服务失效时间
-#   server:
-#      enable-self-preservation: true # 自我保护模式关闭
-#      renewal-percent-threshold: 0.49
-   client:
-      register-with-eureka: false # 作为注册中心服务，不向自己注册自己
-      fetch-registry: false # 注册中心负责维护服务实例，不做检索服务
-      service-url:
-         defaultZone: http://eureak1:9001/eureka/
+  instance:
+    hostname: eureak
+  client:
+    region: eureka # 设置region 地域
+    availability-zones: # 设置zones 可用区
+      eureka: zone,defaultZone
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      # defaultZone: http://${user.username}@${user.password} ${eureka.instance.hostname}:${server.port}/eureka/
+      zone: http://${eureka.instance.hostname}:${server.port}/eureka/

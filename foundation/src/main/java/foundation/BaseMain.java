@@ -84,7 +84,7 @@ public class BaseMain {
 //		System.out.println(queue.poll());
 //		System.out.println(queue.size());
 //		System.out.println(queue.remove());
-		String aaString = "soft";
+//		String aaString = "soft";
 		Integer integer = aaString.hashCode();
 		System.out.println("b 的hash code：" + integer.hashCode());
 		System.out.println("b 的hash code 二进制：" + Integer.toBinaryString(integer));

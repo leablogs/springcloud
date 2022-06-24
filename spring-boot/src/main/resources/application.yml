@@ -8,22 +8,22 @@ spring:
       # additional-paths:
       # - src/main/java
       # exclude: "/web"
-  mail:
-    host: ""
-management:
-  endpoint:
-    health:
-      show-details: always
-    shutdown:
-      enabled: true
-    env:
-      enabled: true
-    info:
-      enabled: true
-    beans:
-      enabled: true
-    metrics:
-      enabled: true
+#  mail:
+#    host: ""
+#management:
+#  endpoint:
+#    health:
+#      show-details: always
+#    shutdown:
+#      enabled: true
+#    env:
+#      enabled: true
+#    info:
+#      enabled: true
+#    beans:
+#      enabled: true
+#    metrics:
+#      enabled: true
 #  endpoints:
 #    web:
 #      exposure:
@@ -39,17 +39,6 @@ management:
 ##  level: info
 #  pattern:
 #    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level-5level %logger- %msg%n'
-  
-debug: true
-  
-${random.int}
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+#${random.int}
     

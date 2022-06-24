@@ -72,7 +72,7 @@ public class RabbitProduct {
         factory.setUsername("rabbit");
         factory.setPassword("rabbit");
         factory.setVirtualHost("test");
-        factory.setHost("81.69.23.63");
+        factory.setHost("rabbitmq.leablogs.com");
         factory.setPort(5672);
         Connection connection = factory.newConnection();
         return connection;

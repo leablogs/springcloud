@@ -22,17 +22,6 @@
 		</dependency>
 	</dependencies>
 
-<!--	 项目上传到nexus maven仓库-->
-		<distributionManagement>
-			<snapshotRepository>
-				<id>nexus-snapshots</id>
-				<url>http://nexus.leablogs.com/repository/maven-snapshots/</url>
-			</snapshotRepository>
-			<repository>
-				<id>nexus-releases</id>
-				<url>http://nexus.leablogs.com/repository/maven-releases/</url>
-			</repository>
-		</distributionManagement>
 	<build>
 		<plugins>
 			<!-- 上传源码 -->

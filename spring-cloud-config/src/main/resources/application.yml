@@ -2,18 +2,41 @@ server:
   port: 5001
 spring:
   application:
-    name: config-server
-  cloud:    config:      server:        git:          uri: https://gitee.com/shilh/spring-cloud-config.git  # 配置git仓库位置
-          search-paths: # 配置仓库路径下的相对搜索位置，可以多个          - config-repo
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+#        native:
+#          search-locations:
+        git:
+          uri: https://gitee.com/shilh/spring-cloud-config.git  # 配置git仓库位置
+          search-paths: config-repo # 配置仓库路径下的相对搜索位置，可以多个
           username: shilh # git仓库用户名
           password: shilihui0107 # git仓库密码
           skip-ssl-validation: true
           force-pull: true # 防止本地存储库变“脏”
+          timeout: 60
+  rabbitmq:
+    host: rabbitmq.leablogs.com
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
-      defaultZone: http://eureak1:9001/eureka/
+      defaultZone: http://localhost:9001/eureka/
+    register-with-eureka: true
+    fetch-registry: true
   instance:
-    instance-id: 192.168.0.105:${server.port}
+    instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
     status-page-url-path: /index.html
+    health-check-url:
+    home-page-url:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"

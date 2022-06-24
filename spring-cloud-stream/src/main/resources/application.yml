@@ -1,0 +1,15 @@
+server:
+  port: 10010
+spring:
+  cloud:
+    stream:
+      binders:
+        input:
+          destination: raw-sensor-data
+  application:
+    name: spring-cloud-stream-rabbitMq
+  rabbitmq:
+    host: rabbitmq.leablogs.com
+    port: 5672
+    username: rabbit
+    password: rabbit

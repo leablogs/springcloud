@@ -1,14 +1,17 @@
 server:
   port: 6002
 eureka:
+  server:
+    port: 9001
+    address: localhost
   client:
     service-url:
-      defaultZone: http://eureak1:9001/eureka/
+      defaultZone: http://${eureka.server.address}:${eureka.server.port}/eureka/
   instance:
-    instance-id: 192.168.0.105:${server.port}
+    instance-id: ${eureka.server.address}:${server.port}
     prefer-ip-address: true
     status-page-url-path: /index.html
-    status-page-url: http://eureak1:9001/info
+    status-page-url: http://${eureka.server.address}:${eureka.server.port}/info
 #    health-check-url: 
 #    home-page-url: 
 #    home-page-url-path: 
@@ -17,4 +20,4 @@ spring:
 #    inetutils:
 #      default-ip-address: 192.168.0.105
   application:
-    name: panda-frame
+    name: panda-client

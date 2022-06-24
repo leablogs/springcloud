@@ -1,17 +1,18 @@
 package foundation.thread;
 
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.lang.reflect.Field;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import org.apache.log4j.Logger;
-
 //import jdk.internal.misc.Unsafe;
 
 public class MyAtomic {
-	private final static Logger LOGGER = Logger.getLogger(MyAtomic.class);
+//	private final static Logger LOGGER = Logger.getLogger(MyAtomic.class);
 	private static AtomicInteger atomicInteger = new AtomicInteger(10);
 
 	public static void main(String[] args) throws InterruptedException {
