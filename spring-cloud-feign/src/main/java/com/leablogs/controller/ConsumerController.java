@@ -1,12 +1,13 @@
 package com.leablogs.controller;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.leablogs.feign.HelloService;
-import com.leablogs.pojo.User;
 
 @RestController
 public class ConsumerController {
@@ -27,5 +28,12 @@ public class ConsumerController {
 		stringBuilder.append(new User(2, "DIDI", 25)).append("\n");
 		System.out.println(stringBuilder);
 		return stringBuilder.toString();
+	}
+	@Data
+	@AllArgsConstructor
+	class User{
+		private int id;
+		private String name;
+		private int age;
 	}
 }

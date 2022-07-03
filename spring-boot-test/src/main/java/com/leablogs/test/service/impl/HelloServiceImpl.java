@@ -1,12 +1,12 @@
 package com.leablogs.test.service.impl;
 
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 
 import com.leablogs.test.service.HelloService;
 
 public class HelloServiceImpl implements HelloService {
 
-	@Transactional
+//	@Transactional
 	@Override
 	public void sayHello(String name) {
 		if (name == null || name.trim() == "") {

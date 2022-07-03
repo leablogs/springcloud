@@ -1,12 +1,12 @@
 package com.leablogs.controller;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.leablogs.pojo.User;
 
 @RestController
 public class HelloController {
@@ -24,5 +24,13 @@ public class HelloController {
 	public String hello(@RequestBody User user) {
 		System.out.println("hello " + user.getName() + ", " + user.getAge());
 		return "hello " + user.getName() + ", " + user.getAge();
+	}
+
+	@Data
+	@AllArgsConstructor
+	class User{
+		private int id;
+		private String name;
+		private int age;
 	}
 }

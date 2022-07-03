@@ -62,6 +62,7 @@
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-zuul</module>
         <module>spring-cloud-stream</module>
+        <module>design-pattern</module>
     </modules>
     <dependencies>
         <dependency>
