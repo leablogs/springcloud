@@ -10,8 +10,8 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 @SpringBootApplication
-//@EnableHystrixDashboard // hystrix 监控
-@EnableTurbine
+@EnableHystrixDashboard // hystrix 监控
+//@EnableTurbine
 public class HystrixApplication {
     public static void main(String[] args) {
 //        HystrixCommands
