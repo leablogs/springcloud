@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -12,8 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.leablogs.pojo.User;
 
 @RestController
 public class BeanController {
@@ -46,5 +46,13 @@ public class BeanController {
 	@RequestMapping(value = "/customParams")
 	public User getPathParam(@Valid User user) {
 		return user;
+	}
+
+	@Data
+	@AllArgsConstructor
+	class User{
+		private int id;
+		private String name;
+		private int age;
 	}
 }

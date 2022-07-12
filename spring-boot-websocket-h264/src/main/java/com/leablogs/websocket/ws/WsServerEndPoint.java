@@ -19,6 +19,8 @@ import javax.websocket.server.PathParam;
 import org.apache.commons.lang3.StringUtils;
 import javax.websocket.server.ServerEndpoint;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
@@ -32,8 +34,9 @@ import lombok.extern.log4j.Log4j;
  */
 @ServerEndpoint(value = "/{devid}") // {}中的数据代表一个参数，多个参数用/分隔
 @Component
-@Log4j
+//@Log4j
 public class WsServerEndPoint {
+	private static Logger log = LoggerFactory.getLogger(WsServerEndPoint.class);
 	// 用来存放每个客户端对应的MyWebSocket对象.若要实现服务端与单一客户端通信的话,可以使用Map来存放,其中Key可以为用户标识
 	public static final ConcurrentHashMap<String, WsServerEndPoint> dev_webSocket = new ConcurrentHashMap<>();
 	// 与某个客户端的连接会话，需要通过它来给客户端发送数据

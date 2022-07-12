@@ -1,0 +1,13 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: serviceCloudGateway
+  cloud:
+    gateway:
+      routes:
+        id: provider_dept_list_routh
+        uri: http://localhost:8080
+        predicates:
+          - Path=/dept/list/**
+          - Method=GET

@@ -1,5 +1,7 @@
 package com.leablogs.feign;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -7,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.leablogs.pojo.User;
 
 @FeignClient("panda-frame")
 @Service
@@ -25,4 +25,12 @@ public interface HelloService {
 
 	@RequestMapping(value = "/hello3", method = RequestMethod.POST)
 	String hello3(@RequestBody User user);
+
+	@Data
+	@AllArgsConstructor
+	class User{
+		private int id;
+		private String name;
+		private int age;
+	}
 }

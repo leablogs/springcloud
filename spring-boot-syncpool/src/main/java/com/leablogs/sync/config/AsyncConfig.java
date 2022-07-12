@@ -10,6 +10,9 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @Configurable
 @EnableAsync
 public class AsyncConfig implements AsyncConfigurer {
+	public static void main(String[] args) {
+		System.out.println("-=");
+	}
 	public Executor getAsyncExecutor() {
 		ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
 		taskExecutor.setCorePoolSize(10);

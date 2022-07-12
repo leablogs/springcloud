@@ -6,14 +6,13 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.ThreadPoolExecutor;
 
-import org.apache.log4j.Logger;
-
 import cn.hutool.core.date.DateUtil;
 import lombok.extern.log4j.Log4j;
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Log4j
 public class MyThreadPool {
-	private static final Logger LOGGER = Logger.getLogger(MyThreadPool.class);
+	private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(MyThreadPool.class);
 	public static void main(String[] args) {
 //		ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 0, 0, null, null);
 //		ThreadLocal threadLocal = new ThreadLocal();
@@ -25,7 +24,7 @@ public class MyThreadPool {
 	
 }
 class ISODateFormate{
-	private static final Logger LOG = Logger.getLogger(ISODateFormate.class);
+	private static final Logger LOG = (Logger) LoggerFactory.getLogger(ISODateFormate.class);
 	private static ThreadLocal<DateFormat> dfwithTzLocal = new ThreadLocal<DateFormat>() {
 		public DateFormat get() {
 			return super.get();

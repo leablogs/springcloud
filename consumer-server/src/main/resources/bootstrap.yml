@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: panda-frame
+#logging:
+#  config: classpath:config/log4j2.xml

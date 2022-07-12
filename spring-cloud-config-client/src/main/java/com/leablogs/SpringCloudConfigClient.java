@@ -8,7 +8,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 public class SpringCloudConfigClient {
 	public static void main(String[] args) throws Exception {
-		System.out.println("==============");
 		SpringApplication.run(SpringCloudConfigClient.class, args);
 	}
 
