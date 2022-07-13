@@ -1,4 +1,4 @@
-package netty.leablogs;
+package netty;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;

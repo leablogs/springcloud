@@ -1,4 +1,4 @@
-package netty.leablogs;
+package netty;
 
 public interface sss {
     public default String aa() {

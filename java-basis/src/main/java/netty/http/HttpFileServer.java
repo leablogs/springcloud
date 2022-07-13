@@ -1,4 +1,4 @@
-package netty.leablogs.http;
+package netty.http;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

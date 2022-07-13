@@ -1,4 +1,4 @@
-package netty.leablogs;
+package netty;
 
 public class bbb implements sss{
     public static void main(String[] args) {
