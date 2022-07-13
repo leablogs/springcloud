@@ -39,8 +39,6 @@
     <modules>
         <module>spring-boot</module>
         <module>spring-cloud-eureka-server</module>
-        <module>consumer-server</module>
-        <module>consumer-client</module>
         <module>spring-cloud-hystrix</module>
         <module>spring-boot-mybatis</module>
         <module>spring-cloud-feign</module>
@@ -48,21 +46,16 @@
         <module>spring-cloud-config</module>
         <module>spring-cloud-config-client</module>
         <module>spring-boot-es</module>
-        <module>spring-boot-starter-security</module>
-        <module>spring-boot-test</module>
         <module>spring-boot-syncpool</module>
-        <module>spring-boot-websocket</module>
-        <module>Socket</module>
         <module>spring-boot-websocket-h264</module>
-        <module>foundation</module>
-        <module>spring-boot-actuator</module>
         <module>spring-boot-mybatis-plus</module>
-        <module>netty</module>
         <module>rabbitmq</module>
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-zuul</module>
         <module>spring-cloud-stream</module>
-        <module>design-pattern</module>
+        <module>spring-cloud-consumer-client</module>
+        <module>spring-cloud-consumer-server</module>
+        <module>java-basis</module>
     </modules>
     <dependencies>
         <dependency>

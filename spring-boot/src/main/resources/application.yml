@@ -1,4 +1,8 @@
 spring:
+  security:
+    user:
+      name: admin
+      password: 123456
   profiles:
     active:
     - dev
@@ -41,4 +45,3 @@ spring:
 #    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level-5level %logger- %msg%n'
 
 #${random.int}
-    
