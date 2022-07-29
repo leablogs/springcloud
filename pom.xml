@@ -46,7 +46,6 @@
         <module>spring-cloud-config</module>
         <module>spring-cloud-config-client</module>
         <module>spring-boot-es</module>
-        <module>spring-boot-syncpool</module>
         <module>spring-boot-websocket-h264</module>
         <module>spring-boot-mybatis-plus</module>
         <module>rabbitmq</module>
