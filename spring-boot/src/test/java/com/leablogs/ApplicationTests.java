@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 //import sun.jvm.hotspot.HelloWorld;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = SpringBootApplications.class)
 @WebAppConfiguration
 class ApplicationTests {
 	private MockMvc mvc;

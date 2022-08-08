@@ -1,6 +1,7 @@
 package invoke.cglib;
 
-import net.sf.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.Callback;
+import org.springframework.cglib.proxy.Enhancer;
 
 /**
  * @description
@@ -21,7 +22,7 @@ public class CglibApplication {
         /**
          * 定义代理逻辑对象为当前对象，要求当前对象实现methodInterceptor 接口
          */
-        enhancer.setCallback(new CglibInterceptor(cglibHello));
+        enhancer.setCallback((Callback) new CglibInterceptor(cglibHello));
         CglibHello cglibHello1 = (CglibHello) enhancer.create();
         cglibHello1.sayHello("shilh");
         cglibHello1.sayByebye("shilh");

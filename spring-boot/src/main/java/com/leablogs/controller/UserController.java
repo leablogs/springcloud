@@ -2,7 +2,7 @@ package com.leablogs.controller;
 
 import javax.annotation.Resource;
 
-import com.leablogs.Application;
+import lombok.extern.log4j.Log4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +25,11 @@ public class UserController {
 
 	@RequestMapping(value = "/getUserList", method = RequestMethod.GET)
 	public String getUserList(String param) {
-		log.isInfoEnabled();
-		log.info("---------------");
-		log.debug("---------------");
-		log.error("---------------");
-		log.getName();
+//		log.isInfoEnabled();
+//		log.info("---------------");
+//		log.debug("---------------");
+//		log.error("---------------");
+//		log.getName();
 //		String url = "http://eureka-server/test/?param=" + param;
 //		return restTemplate.getForObject(url, String.class);
 //		System.out.println(environment);

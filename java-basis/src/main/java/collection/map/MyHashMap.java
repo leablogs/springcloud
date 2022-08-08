@@ -11,6 +11,13 @@ import java.util.Map;
 
 public class MyHashMap {
     public static void main(String[] args) {
-        Map<String,Object> haspMap = new HashMap<>();
+        Map<String,Integer> haspMap = new HashMap<>();
+        Integer a = haspMap.get("a");
+
+        haspMap.put("a",10);
+        haspMap.put("a",20);
+        System.out.println(haspMap.get("a"));
+
+
     }
 }

@@ -6,7 +6,8 @@ mybatis:
   - classpath:mybatis/mapper/*.xml
   type-aliases-package: com.leablogs.bean
   configuration:
-    # 默认开启驼峰命名法，可以不用设置该属性    map-underscore-to-camel-case: true
+    # 默认开启驼峰命名法，可以不用设置该属性
+    map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 具体日志实现 slf4j log4j log4j2 jdk_logging commons_logging stdout_logging no_logging
 
 #    - com.leablogs.config.MybatisPlus
@@ -28,14 +29,18 @@ spring:
       key-prefix: lea_
       time-to-live: 60ms    
     type: redis
-      datasource:    username: root
+    
+  datasource:
+    username: root
     password: 123456
-    url: jdbc:mysql://leablogs.com:3306/sys?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://leablogs.com:3306/sys?useSSL=false&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=UTC
+    //&allowMultiQueries=true 允许批量更新
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     tomcat:
       default-transaction-isolation: 2
-    druid:      initial-size: 5 # 初始化大小
+    druid:
+      initial-size: 5 # 初始化大小
       min-idle: 5 # 最小
       max-active: 20 # 最大
       max-wait: 60000 # 配置获取链接等待超时时间
@@ -48,24 +53,33 @@ spring:
       filters: stat,wall,log4j,config
       max-pool-prepared-statement-per-connection-size: 20
       use-global-data-source-stat: true
-      filter:        stat:          slow-sql-millis: 10000          log-slow-sql: true
+      filter:
+        stat:
+          slow-sql-millis: 10000
+          log-slow-sql: true
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-      web-stat-filter:        enabled: true
+      web-stat-filter:
+        enabled: true
         url-pattern: /*
         exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.css,*.ico
         session-stat-enable: true
         session-stat-max-count: 10
         principal-session-name: druid
-      stat-view-servlet:        enabled: true
+      stat-view-servlet:
+        enabled: true
         url-pattern: /druid/*
         reset-enable: true
         login-password: admin
         login-username: admin
-          redis:    database: 5
+        
+  redis:
+    database: 5
     host: 127.0.0.1
     port: 13292
     timeout: 5000
-    jedis:      pool:        max-active: 1000
+    jedis:
+      pool:
+        max-active: 1000
         max-wait: 2000
         max-idle: 500
         min-idle: 50

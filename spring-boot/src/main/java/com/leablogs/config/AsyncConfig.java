@@ -1,4 +1,4 @@
-package com.leablogs.async;
+package com.leablogs.config;
 
 import java.util.concurrent.Executor;
 

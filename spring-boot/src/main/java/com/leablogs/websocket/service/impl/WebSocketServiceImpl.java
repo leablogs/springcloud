@@ -16,9 +16,9 @@ import com.leablogs.websocket.service.WebSocketService;
 
 import lombok.Data;
 
-@ServerEndpoint("/ws")
-@Component
-@Data
+//@ServerEndpoint("/ws")
+//@Component
+//@Data
 public class WebSocketServiceImpl implements WebSocketService {
 	private static int onlineCount = 0;
 	private static CopyOnWriteArraySet<WebSocketServiceImpl> webSocketSet = new CopyOnWriteArraySet<WebSocketServiceImpl>();
@@ -53,13 +53,13 @@ public class WebSocketServiceImpl implements WebSocketService {
 	public void onMessage(String message, Session session) {
 		System.out.println("来自客户端消息：" + message);
 		for (WebSocketServiceImpl item : webSocketSet) {
-			try {
-				String userName = item.getSession().getUserPrincipal().getName();
-				System.out.println(userName);
-				item.sendMessage(message);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+//			try {
+//				String userName = item.getSession().getUserPrincipal().getName();
+//				System.out.println(userName);
+//				item.sendMessage(message);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
 		}
 	}
 
