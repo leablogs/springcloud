@@ -24,14 +24,14 @@
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <name>nexus snapshots</name>
-            <!--<url>http://nexus.leablogs.com/repository/maven-snapshots/</url>-->
-            <url>${SnapshotRepository}</url>
+            <url>http://nexus.leablogs.com/repository/maven-snapshots/</url>
+<!--            <url>${SnapshotRepository}</url>-->
         </snapshotRepository>
         <repository>
             <id>nexus-releases</id>
             <name>nexus releases</name>
-            <!--<url>http://nexus.leablogs.com/repository/maven-releases/</url>-->
-            <url>${ReleaseRepository}</url>
+            <url>http://nexus.leablogs.com/repository/maven-releases/</url>
+<!--            <url>${ReleaseRepository}</url>-->
         </repository>
     </distributionManagement>
 
@@ -40,12 +40,10 @@
         <module>spring-boot</module>
         <module>spring-cloud-eureka-server</module>
         <module>spring-cloud-hystrix</module>
-        <module>spring-boot-mybatis</module>
         <module>spring-cloud-feign</module>
         <module>common</module>
         <module>spring-cloud-config</module>
         <module>spring-cloud-config-client</module>
-        <module>spring-boot-es</module>
         <module>spring-boot-websocket-h264</module>
         <module>spring-boot-mybatis-plus</module>
         <module>rabbitmq</module>

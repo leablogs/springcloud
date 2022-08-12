@@ -7,7 +7,7 @@
         <artifactId>spring-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>consumer-server</artifactId>
+    <artifactId>spring-cloud-consumer-server</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.leablogs</groupId>
@@ -37,21 +37,21 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder -->
-       <!-- <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-            <version>5.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>net.logstash.logback</groupId>
+             <artifactId>logstash-logback-encoder</artifactId>
+             <version>5.0</version>
+             <exclusions>
+                 <exclusion>
+                     <groupId>ch.qos.logback</groupId>
+                     <artifactId>logback-classic</artifactId>
+                 </exclusion>
+                 <exclusion>
+                     <groupId>ch.qos.logback</groupId>
+                     <artifactId>logback-core</artifactId>
+                 </exclusion>
+             </exclusions>
+         </dependency>-->
 
     </dependencies>
 

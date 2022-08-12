@@ -1,13 +1,99 @@
 server:
   port: 8082
-#eureka:
-#  client:
-##    register-with-eureka: false
-#    fetch-registry: true
-#    service-url:
-#      defaultZone: http://eureak1:9001/eureka/ # ,http://eureak2:9002/eureka/'
-#  instance:
-#    instance-id: springcloudclient
+logging:
+  config: classpath:log4j2.xml
 spring:
   application:
     name: eureka-service-client
+  # mysql 配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://leablogs.com:13306/spring_cloud?useUnicode=true&charcterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: 0205.leablogs.com
+
+    keep-alive: true
+    keep-alive-between-time-millis: 60000
+    # druid 配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    # druid调优
+    druid:
+      # 初始化大小、最小、最大
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 获取连接等待超时时间
+      max-wait: 60000
+      # 间隔多久进行一次检测，检测需要关闭的空闲连接，单位ms
+      time-between-eviction-runs-millis: 60000
+      # 配置连接在池中最小生存时间ms
+      min-evictable-idle-time-millis: 300000
+      # 测试连接
+      test-on-borrow: false # 向连接池申请连接时，连接池判断这条连接首付可用
+      test-while-idle: true # 应用向连接池申请连接，并且testonborrow为false是，连接池将判断是否处于空闲，是，则验证这条连接是否可用
+      test-on-return: false # 当时用完连接连接池回收时会判断该链接是否可用
+      # 打开PScache，并且制定连接上的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计拦截filters
+      filters: stat,wall,log4j
+      # asyncInit是1.1.4 新增配置，如果initialSize数量较多时，打开会加快启动时间
+      async-init: true
+      # 提供一下集中过滤配置 StatFilter WallFilter ConfigFilter EncodingConvertFilter Slf4jLogFilter Log4jFilter Log4j2Filter  CommonsLogFilter
+      filter:
+        # 日志监控，使用slf4j进行日志输出
+        slf4j:
+          enabled: true
+          statement-log-error-enabled: true
+          statement-create-after-log-enabled: false
+          statement-close-after-log-enabled: false
+          result-set-open-after-log-enabled: false
+          result-set-close-after-log-enabled: false
+        stat:
+          # 配置慢sql记录
+          slow-sql-millis: 5000
+          log-slow-sql: true
+          enabled: true
+          # slow-sql-log-level:
+          # 指定数据库类型
+          db-type: mysql
+          # merge-sql: true
+          connection-stack-trace-enable: true
+      # 测试连接是否可用sql语句
+      validation-query: select 1
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*bmp,*css,*ico
+        session-stat-enable: true
+        session-stat-max-count: 10
+        principal-session-name: druid
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: admin
+#      connection-properties:
+
+mybatis-plus:
+  #  config-location: classpath:mybaits/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #  type-aliases-package: com.leablogs.bean
+  lazy-initialization: on
+  configuration:
+    # 默认开启驼峰命名法，可以不用设置该属性
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 具体日志实现 slf4j log4j log4j2 jdk_logging commons_logging stdout_logging no_logging
+    #    #    - com.leablogs.config.MybatisPlus
+    cache-enabled: true
+    lazy-loading-enabled: false # 全局延迟加载
+    use-generated-keys: true # 允许jdbc支持自动生成住建
+    default-executor-type: simple # 配置默认executor类型  simple reuse batch
+    default-statement-timeout: 10 # 设置超时时间
+    safe-row-bounds-enabled: false # 允许嵌套语句中使用分页(rowbounds)
+    local-cache-scope: session # 利用本地缓存机制防止循环引用和加速重复查询，默认session 一个会话执行所有查询，statement本地会话尽用在语句执行上，对相同sqlSession不同调用不会共享数据
+#    proxy-factory:
+#      CGLIB # 创建具有延迟加载能力的对象所用到的代理工具 javassist 默认  cglib
+#  executor-type:
+#  type-handlers-package:

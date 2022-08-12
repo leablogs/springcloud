@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class FastGenerator {
     final static String dirPath = System.getProperty("user.dir");
-    private static String url = "jdbc:mysql://leablogs.com:13307/sys?useSSL=false&characterEncoding=utf8&serverTimezone=UTC";
+    private static String url = "jdbc:mysql://leablogs.com:13306/spring_cloud?useSSL=false&characterEncoding=utf8&serverTimezone=UTC";
     private static String username = "root";
     private static String password = "0205.leablogs.com";
 

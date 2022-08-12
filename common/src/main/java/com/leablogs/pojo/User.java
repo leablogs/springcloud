@@ -23,11 +23,14 @@ public class User {
 	private int id;
 	@NotNull(message = "name 不能为空")
 	private String name;
+
 	@NotNull
 	@Size(min = 0, max = 120,message = "年龄的范围应该在0-120岁之间")
 	private int age;
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date date;
+
+	private Boolean delete;
 
 	public User(int id, String name, int age) {
 		super();

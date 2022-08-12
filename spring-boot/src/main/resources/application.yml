@@ -16,34 +16,25 @@ spring:
       # exclude: "/web"
 #  mail:
 #    host: ""
-#management:
-#  endpoint:
-#    health:
-#      show-details: always
-#    shutdown:
-#      enabled: true
-#    env:
-#      enabled: true
-#    info:
-#      enabled: true
-#    beans:
-#      enabled: true
-#    metrics:
-#      enabled: true
-#  endpoints:
-#    web:
-#      exposure:
-#        exclude:
-#        - "*"
-##      base-path: "actuator"
-#  server:
-#    port: 8084
-#logging:
-#  file:
-#    path: D://log//log.log
-##    name: wang
-##  level: info
-#  pattern:
-#    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level-5level %logger- %msg%n'
 
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+    env:
+      enabled: true
+    info:
+      enabled: true
+    beans:
+      enabled: true
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        exclude:
+          - "*"
+#      base-path: "actuator"
 #${random.int}
