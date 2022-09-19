@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.leablogs.user.mapper.UsersMapper">
+    <!--    eviction：二级缓存算法（FIFO/LRU/SOFT/WEAK）-->
+    <!--    type：指定redis的二级缓存类的全路径名-->
+    <!--    flushInterval：刷新间隔,间隔多长时间清空缓存，被动触发非定时器轮询-->
+    <!--    size：缓存大小。每个缓存可以存储 1024 个列表或对象的引用-->
+    <!--    readOnly：缓存将作为“读/写”缓存，意味着获取的对象不是共享的且对调用者是安全的。不会有其它的调用者或线程潜在修改。-->
+    <!--    <cache type="com.huang.utils.RedisCache" flushInterval="60000" eviction="LRU" blocking="" readOnly="true" size="1024"/>-->
+    <resultMap id="getUsers" type="com.leablogs.user.entity.Users" autoMapping="true">
+        <association property="usersExt" column="userId" javaType="com.leablogs.user.entity.UsersExt">
+        <!--select="com.leablogs.user.mapper.UsersExtMapper.getUserById"-->
+            <id property="id" column="id" />
+            <result property="province" column="province" />
+            <result property="city" column="city" />
+            <result property="area" column="area"/>
+            <result property="userId" column="user_id"/>
+        </association>
+    </resultMap>
+    <resultMap id="getUsers1" type="com.leablogs.user.entity.Users" autoMapping="true">
+        <association property="usersExt" column="userId" javaType="com.leablogs.user.entity.UsersExt" select="com.leablogs.user.mapper.UsersExtMapper.getUserById">
+            <id property="id" column="id" />
+            <result property="province" column="province" />
+            <result property="city" column="city" />
+            <result property="area" column="area"/>
+            <result property="userId" column="user_id"/>
+        </association>
+    </resultMap>
+    <sql id="usersVO">
+        u.id, user_name, password, sex, brithday, ue.*
+    </sql>
+    <sql id="usersVO1">
+        id, user_name, password, sex, brithday
+    </sql>
+    <select id="selectUserByGender" resultType="com.leablogs.user.entity.Users">
+        select
+        <include refid="usersVO"/>
+        from ${prefix}users
+        <where>
+            <if test="sex!=null">
+                and sex = #{sex}
+            </if>
+        </where>
+    </select>
 
+    <select id="selectPage" resultType="com.leablogs.user.entity.Users">
+        select
+        <include refid="usersVO"/>
+        from ${prefix}users
+        where sex = #{sex}
+    </select>
+
+    <select id="getById" resultMap="getUsers">
+        select
+        <include refid="usersVO"/>
+        from ${prefix}users as u left join ${prefix}users_ext as ue on u.id=ue.user_id
+        where u.id = #{id}
+    </select>
+    <select id="getById" resultMap="getUsers1">
+        select
+        <include refid="usersVO1"/>
+        from ${prefix}users
+        where u.id = #{id}
+    </select>
 </mapper>
