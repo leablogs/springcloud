@@ -1,0 +1,1 @@
+package threads.product_comsumer;public class ValueObject {    public static String value = "";}
