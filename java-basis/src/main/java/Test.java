@@ -1,11 +1,1 @@
-/**
- * @description
- * @author: shilh
- * @time 2022/7/13 19:42
- */
-
-public class Test {
-    public static void main(String[] args) {
-        System.out.println();
-    }
-}
+import lombok.extern.log4j.Log4j;/** * @description * @author: 施立辉 * @time 2022/7/13 19:42 */@Log4jpublic class Test {//    private final static Logger logger = LoggerFactory.getLogger(Test.class);    public static void main(String[] args) {        long time = System.currentTimeMillis();        for (int i=0;i<100;i++){            try {                Thread.sleep(0,1);            } catch (InterruptedException e) {                e.printStackTrace();            }        }        System.out.println(System.currentTimeMillis() - time);    }}
